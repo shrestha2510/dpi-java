@@ -6,6 +6,7 @@ import org.pcap4j.packet.IpV4Packet;
 import org.pcap4j.packet.Packet;
 import org.pcap4j.packet.TcpPacket;
 import org.pcap4j.packet.UdpPacket;
+import com.shrestha.detector.ProtocolDetector;
 
 public class PacketParser {
 
@@ -13,12 +14,14 @@ public class PacketParser {
     private final IPv4Parser ipv4Parser;
     private final TCPParser tcpParser;
     private final UDPParser udpParser;
+    private final ProtocolDetector protocolDetector;
 
     public PacketParser() {
         ethernetParser = new EthernetParser();
         ipv4Parser = new IPv4Parser();
         tcpParser = new TCPParser();
         udpParser = new UDPParser();
+        protocolDetector = new ProtocolDetector();
     }
 
     public PacketInfo parse(Packet packet) {
@@ -48,6 +51,7 @@ public class PacketParser {
                 }
             }
         }
+        protocolDetector.detect(packetInfo);
 
         return packetInfo;
     }

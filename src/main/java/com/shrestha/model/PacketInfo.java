@@ -21,6 +21,16 @@ public class PacketInfo {
 
     private long sequenceNumber;
 
+    public String getApplicationProtocol() {
+        return applicationProtocol;
+    }
+
+    public void setApplicationProtocol(String applicationProtocol) {
+        this.applicationProtocol = applicationProtocol;
+    }
+
+    private String applicationProtocol;
+
     public long getSequenceNumber() {
         return sequenceNumber;
     }
