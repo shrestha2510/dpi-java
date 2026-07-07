@@ -1,12 +1,12 @@
 package com.shrestha.parser;
 
+import com.shrestha.detector.ProtocolDetector;
 import com.shrestha.model.PacketInfo;
 import org.pcap4j.packet.EthernetPacket;
 import org.pcap4j.packet.IpV4Packet;
 import org.pcap4j.packet.Packet;
 import org.pcap4j.packet.TcpPacket;
 import org.pcap4j.packet.UdpPacket;
-import com.shrestha.detector.ProtocolDetector;
 
 public class PacketParser {
 
@@ -37,7 +37,9 @@ public class PacketParser {
             IpV4Packet ipPacket = ethernetPacket.get(IpV4Packet.class);
 
             if (ipPacket != null) {
+
                 ipv4Parser.parse(ipPacket, packetInfo);
+
                 TcpPacket tcpPacket = ipPacket.get(TcpPacket.class);
 
                 if (tcpPacket != null) {
@@ -51,6 +53,7 @@ public class PacketParser {
                 }
             }
         }
+
         protocolDetector.detect(packetInfo);
 
         return packetInfo;
