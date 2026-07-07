@@ -2,19 +2,78 @@ package com.shrestha.model;
 
 public class PacketInfo {
 
+    private String sourceMac;
+    private String destinationMac;
+
+    private int ipVersion;
+
     private String sourceIp;
     private String destinationIp;
 
     private int sourcePort;
     private int destinationPort;
 
-    private String protocol;
+    private String transportProtocol;
 
     private int packetLength;
 
     private long timestamp;
 
+    private long sequenceNumber;
+
+    public long getSequenceNumber() {
+        return sequenceNumber;
+    }
+
+    public void setSequenceNumber(long sequenceNumber) {
+        this.sequenceNumber = sequenceNumber;
+    }
+
+    public long getAcknowledgementNumber() {
+        return acknowledgementNumber;
+    }
+
+    public void setAcknowledgementNumber(long acknowledgementNumber) {
+        this.acknowledgementNumber = acknowledgementNumber;
+    }
+
+    public String getTcpFlags() {
+        return tcpFlags;
+    }
+
+    public void setTcpFlags(String tcpFlags) {
+        this.tcpFlags = tcpFlags;
+    }
+
+    private long acknowledgementNumber;
+
+    private String tcpFlags;
+
     public PacketInfo() {
+    }
+
+    public String getSourceMac() {
+        return sourceMac;
+    }
+
+    public void setSourceMac(String sourceMac) {
+        this.sourceMac = sourceMac;
+    }
+
+    public String getDestinationMac() {
+        return destinationMac;
+    }
+
+    public void setDestinationMac(String destinationMac) {
+        this.destinationMac = destinationMac;
+    }
+
+    public int getIpVersion() {
+        return ipVersion;
+    }
+
+    public void setIpVersion(int ipVersion) {
+        this.ipVersion = ipVersion;
     }
 
     public String getSourceIp() {
@@ -49,12 +108,12 @@ public class PacketInfo {
         this.destinationPort = destinationPort;
     }
 
-    public String getProtocol() {
-        return protocol;
+    public String getTransportProtocol() {
+        return transportProtocol;
     }
 
-    public void setProtocol(String protocol) {
-        this.protocol = protocol;
+    public void setTransportProtocol(String transportProtocol) {
+        this.transportProtocol = transportProtocol;
     }
 
     public int getPacketLength() {

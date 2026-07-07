@@ -12,6 +12,6 @@ public class Main {
 
         PcapFileReader reader = new PcapFileReader();
 
-        reader.readPcap("captures/exablaze_trailer.pcap");
+        reader.readPcap("captures/sample.pcapng");
     }
 }
