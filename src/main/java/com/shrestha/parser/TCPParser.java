@@ -13,10 +13,5 @@ public class TCPParser {
         packetInfo.setDestinationPort(
                 tcpPacket.getHeader().getDstPort().valueAsInt());
 
-        packetInfo.setSequenceNumber(
-                tcpPacket.getHeader().getSequenceNumber());
-
-        packetInfo.setAcknowledgementNumber(
-                tcpPacket.getHeader().getAcknowledgmentNumber());
     }
 }

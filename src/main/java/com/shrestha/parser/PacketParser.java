@@ -27,6 +27,7 @@ public class PacketParser {
     public PacketInfo parse(Packet packet) {
 
         PacketInfo packetInfo = new PacketInfo();
+        packetInfo.setPacketLength(packet.length());
 
         EthernetPacket ethernetPacket = packet.get(EthernetPacket.class);
 
@@ -43,13 +44,17 @@ public class PacketParser {
                 TcpPacket tcpPacket = ipPacket.get(TcpPacket.class);
 
                 if (tcpPacket != null) {
+
                     tcpParser.parse(tcpPacket, packetInfo);
-                }
 
-                UdpPacket udpPacket = ipPacket.get(UdpPacket.class);
+                } else {
 
-                if (udpPacket != null) {
-                    udpParser.parse(udpPacket, packetInfo);
+                    UdpPacket udpPacket = ipPacket.get(UdpPacket.class);
+
+                    if (udpPacket != null) {
+                        udpParser.parse(udpPacket, packetInfo);
+                    }
+
                 }
             }
         }

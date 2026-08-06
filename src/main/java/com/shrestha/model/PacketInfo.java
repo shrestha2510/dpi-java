@@ -19,10 +19,7 @@ public class PacketInfo {
     private int packetLength;
     private long timestamp;
 
-    private long sequenceNumber;
-    private long acknowledgementNumber;
 
-    private String tcpFlags;
 
     public PacketInfo() {
     }
@@ -115,27 +112,5 @@ public class PacketInfo {
         this.timestamp = timestamp;
     }
 
-    public long getSequenceNumber() {
-        return sequenceNumber;
-    }
-
-    public void setSequenceNumber(long sequenceNumber) {
-        this.sequenceNumber = sequenceNumber;
-    }
-
-    public long getAcknowledgementNumber() {
-        return acknowledgementNumber;
-    }
-
-    public void setAcknowledgementNumber(long acknowledgementNumber) {
-        this.acknowledgementNumber = acknowledgementNumber;
-    }
-
-    public String getTcpFlags() {
-        return tcpFlags;
-    }
-
-    public void setTcpFlags(String tcpFlags) {
-        this.tcpFlags = tcpFlags;
-    }
+   
 }
