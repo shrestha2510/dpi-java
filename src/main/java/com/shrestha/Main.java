@@ -1,6 +1,6 @@
 package com.shrestha;
 
-import com.shrestha.reader.PcapFileReader;
+import com.shrestha.service.AnalysisService;
 
 public class Main {
 
@@ -10,8 +10,8 @@ public class Main {
         System.out.println(" Java Deep Packet Inspection Tool ");
         System.out.println("==================================");
 
-        PcapFileReader reader = new PcapFileReader();
+        AnalysisService analysisService = new AnalysisService();
 
-        reader.readPcap("captures/dns-test2.pcapng");
+        analysisService.analyze("captures/dns-test2.pcapng");
     }
 }
