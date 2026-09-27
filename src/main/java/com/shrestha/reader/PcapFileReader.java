@@ -9,7 +9,7 @@ import com.shrestha.tracker.FlowTracker;
 import com.shrestha.tracker.Flow;
 
 import com.shrestha.printer.PacketPrinter;
-import java.util.Collection;import java.io.IOException;
+import java.util.Collection;
 
 public class PcapFileReader {
 
@@ -22,7 +22,6 @@ public class PcapFileReader {
     public PcapFileReader() {
         this.packetParser = new PacketParser();
         this.flowTracker = new FlowTracker();
-      ;
         this.packetPrinter = new PacketPrinter();
 
     }

@@ -4,7 +4,7 @@ import com.shrestha.tracker.Flow;
 
 public class LongDurationRule implements DetectionRule {
 
-    private static final long THRESHOLD = 1000;
+    private static final long THRESHOLD = 15000;
 
     @Override
     public String check(Flow flow) {
